@@ -84,10 +84,9 @@ a{
 section{
 	width: 100%;
 	margin: auto 0;
-	padding: 5em;
+	padding: 6em;
 	display: flex;
-	justify-content: space-between;
-
+	justify-content: space-around;
 }
 
 section:nth-of-type(1) div,
@@ -101,14 +100,15 @@ section:nth-of-type(3) div{
 	padding: .5em;
 	border-left: 2px solid var(--color-main);
 	max-width: 80px;
+	color: var(--color-dark);
 }
 
 .btn:hover{
 	transition: background .5s;
 	background: var(--color-main);
 	color: var(--color-light);
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
 }
 
 /*toggle dark mode*/
@@ -223,7 +223,7 @@ label:active:after{
 }
 
 .section-content figure{
-	max-width: 35vw;
+	min-width: 35vw;
     margin: 0;
     overflow: hidden;
 }
@@ -309,21 +309,23 @@ label:active:after{
 
 .contactNav {
 	background-color: #333;
-  	height: 20%;  
+  	height: 20%; 
   	position: fixed; 
   	z-index: 1; 
   	top: 40%; 
   	left: 0;
   	animation: transitionIn .9s;
+  	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 
 }
 
 .contactNav a{
-	display: block;
-	margin: 1em .45em;	
-	text-align: center;  
 	color: var(--color-side);
 	text-decoration: none;
+	padding: .5em;
 	font-weight: var(--fw-bold); 
 	animation: transitionIn .9s;
 	
@@ -331,6 +333,10 @@ label:active:after{
 
 .contactNav a:hover{
 	opacity: .7;
+}
+
+.contactNav i{
+	font-size: 16px;
 }
 
 [data-scroll]{
@@ -347,7 +353,7 @@ label:active:after{
 	transform: translateY(-50px);	
 }
 
-@media (max-width: 900px){
+@media (max-width: 1000px){
 	:root{
 		--fs-h1: 1.5rem;
 		--fs-h2: 1rem;
@@ -357,6 +363,8 @@ label:active:after{
 		--fw-bold: 700;
 	}
 
+	h2,h3{font-weight: var(--fw-bold);}
+
 	section{
 		display: flex;
 		flex-direction: column;
@@ -365,7 +373,7 @@ label:active:after{
 
 	section:nth-of-type(1) div,
 	section:nth-of-type(2) div,
-	section:nth-of-type(3) div{
+	section:nth-of-type(3) div,{
 		width: 100%;
 	}
 
@@ -382,8 +390,27 @@ label:active:after{
 
 	.intro{
 		background-position: left;
+		padding: 0 5em;
+
 	}
 
+	section{
+		padding: 0 5em;
+	}
+
+}
+
+@media(max-width: 400px){
+	.section-aboutMe .subtitlesContainer{
+		flex-direction: column;
+	}
+	.section-myWorks{
+		padding: 2em;
+	}
+
+	section{
+		padding: 5;
+	}
 }
 
 @keyframes transitionIn{
@@ -396,4 +423,4 @@ label:active:after{
 		opacity: 1;
 		transform: translateY(0);
 	}
-}
+}-
