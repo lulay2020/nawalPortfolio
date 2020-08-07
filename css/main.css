@@ -1,4 +1,4 @@
-/*custom varibles*/
+/*CUSTOM VARIABLES*/
 :root {
 	--ff-primary: 'Source Sans Pro', sans-serif;
 
@@ -24,7 +24,7 @@
 
 }
 
-/*dark mode varibles*/
+/*DARK MODE VARIABLES*/
 
 html[data-theme="dark"]{
 	--color-light: #333;
@@ -33,7 +33,7 @@ html[data-theme="dark"]{
 	--header: url(../images/header-dark.jpg); 
 }
 
-/*general styling*/
+/*GENERAL STYLING*/
 
 html.transition, 
 html.transition *,
@@ -54,7 +54,7 @@ body{
 	color: var(--color-dark);
 	margin: 0;
 	font: var(--fs-body)/1.6 var(--ff-primary);
-	line-height: 1.6;
+	letter-spacing: 1px;
 }
 
 h1,
@@ -79,10 +79,10 @@ a{
 	color: var(--color-text);
 	text-decoration: none;
 	font-weight: var(--fw-bold);
+	letter-spacing: 0.3px;
 }
 
 section{
-	width: 100%;
 	margin: auto 0;
 	padding: 6em;
 	display: flex;
@@ -110,7 +110,8 @@ section:nth-of-type(2) div{
 	border-bottom-right-radius: 25px;
 }
 
-/*toggle dark mode*/
+/*TOGGLE DARK MODE BTN*/
+/*REFERENCED LINK https://codepen.io/mburnette/pen/LxNxNg*/
 
 div.toggle-container{
 	display: flex;
@@ -162,7 +163,7 @@ label:active:after{
 	width: 20px;
 }
 
-/*header section*/
+/*HEADER SECTION*/
 .intro{
 	background: var(--header) center/cover no-repeat;
 	transition: background 1s ease-in;
@@ -181,13 +182,13 @@ label:active:after{
 	padding: 0.3em 0;
 }
 
-/*services section*/
+/*SERVICES SECTION*/
 
 .section-services .section-content div:nth-of-type(2){
 	padding: 1em 0;
 }
 
-/*about me section*/
+/*ABOUT ME SECTION*/
 
 .section-title{
 	padding-left: 6em;
@@ -197,33 +198,35 @@ label:active:after{
 	margin-top: 0;
 }
 
-.section-aboutMe .subtitlesContainer{
+.section-about-me .subtitles-container{
 	display: flex;
 	justify-content: space-between;
 }
 
-.subtitlesContainer .subtitle{
+.subtitles-container .subtitle{
 	padding: .6em 0;
 }
 
-.subtitlesContainer .subtitles{
+.subtitles-container .subtitles{
 	padding-left: 0;
 }
 
-.subtitlesContainer ul li{
+.subtitles-container ul li{
 	margin-left: 1.5em;
 }
 
-/*my works section*/
+/*MY WORKS SECTION*/
+
+.section-my-works .section-content{
+    margin-right: 80px;
+}
 
 figure{
 	position: relative;
-	min-width: 35vw;
     overflow: hidden;
 }
 
 figcaption{
-	position: absolute;
 	bottom: 150px;
 	left: 30%;
 	width: 80%;
@@ -232,7 +235,6 @@ figcaption{
 figure img{
 	width: 100%;
 	height: 100%;
-    max-width: 100%;
     transition: 
 		transform 270ms cubic-bezier(0.5, 0, 0.5, 1),
 		opacity 250ms linear;
@@ -240,11 +242,6 @@ figure img{
 
 figure img:hover{
 	transform: scale(1.11);
-}
-
-.section-myWorks .section-content{
-	width: 100%;
-    margin-right: 80px;    
 }
 
 .project-info{
@@ -292,12 +289,10 @@ figure img:hover{
 	padding: .3em;
 }
 
-/*more projects section*/
+/*MORE WORKS SECTION*/
 
-.section-moreProjects{
+.section-more-projects{
 	display: grid;
-	height: 100%;
-	width: 100%;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 1em;
 }
@@ -307,9 +302,9 @@ figure img:hover{
 	height: 100%;
 }
 
-/*vertical contact navigation*/
+/*VERTICAL CONTACT NAVIGATION*/
 
-.contactNav {
+.contact-nav {
 	background-color: #333;
   	height: 20%; 
   	position: fixed; 
@@ -324,7 +319,7 @@ figure img:hover{
 
 }
 
-.contactNav a{
+.contact-nav a{
 	color: var(--color-side);
 	text-decoration: none;
 	padding: .5em;
@@ -333,15 +328,15 @@ figure img:hover{
 	
 }
 
-.contactNav a:hover{
+.contact-nav a:hover{
 	opacity: .7;
 }
 
-.contactNav i{
+.contact-nav i{
 	font-size: 16px;
 }
 
-/*scrolling effect*/
+/*SCROLLING EFFECT*/
 
 [data-scroll]{
 	transition: all 2s;
@@ -354,7 +349,7 @@ figure img:hover{
 
 [data-scroll='out']{
 	opacity: 0;
-	transform: translateY(-50px);	
+	transform: translateY(50px);	
 }
 
 @media (max-width: 1000px){
@@ -378,11 +373,11 @@ figure img:hover{
 	.section-title{
 		padding: 2em 0;
 	}
-	.myServices h2{
+	.my-services h2{
 		padding-top: 53px;
 	}
 
-	.section-aboutMe .subtitlesContainer{
+	.section-aboutMe .subtitles-container{
 		justify-content: space-around;
 	}
 
@@ -399,10 +394,10 @@ figure img:hover{
 }
 
 @media(max-width: 480px){
-	.section-aboutMe .subtitlesContainer{
+	.section-about-me .subtitles-container{
 		flex-direction: column;
 	}
-	.section-myWorks, .section-moreProjects{
+	.section-my-works, .section-more-projects{
 		padding: 2.27em;
 	}
 	.titles p{
